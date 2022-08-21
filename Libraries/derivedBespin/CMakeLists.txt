@@ -12,6 +12,7 @@ include_directories(
 
 add_library(derivedBespin SHARED
 	../../API/IPlanet.h
+	Bespin.h
 	Bespin1.h
 	Bespin1.cpp
 )
