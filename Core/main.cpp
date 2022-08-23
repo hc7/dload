@@ -12,55 +12,14 @@ static const std::string bespinLibPath = "derivedBespin.dll";
 static const std::string tatooineLibPath = "Tatooine.dll";
 #endif
 #ifdef __linux__
-static const std::string bespinLibPath = "./libBespin.so";
+// static const std::string bespinLibPath = "./libBespin.so";
+static const std::string bespinLibPath = "./libBDerived.so";
 static const std::string tatooineLibPath = "./libTatooine.so";
 #endif
 #ifdef __APPLE__
 static const std::string bespinLibPath = "./libBespin.dylib";
 static const std::string tatooineLibPath = "./libTatooine.dylib";
 #endif
-
-
-
-#if defined(__linux__) || defined(__APPLE__)
-extern "C"
-{
-	Bespin *allocator()
-	{
-		return new Bespin();
-	}
-
-	void deleter(Bespin *ptr)
-	{
-		delete ptr;
-	}
-}
-#endif
-
-#ifdef WIN32
-extern "C"
-{
-	__declspec (dllexport) Bespin *allocator()
-	{
-		return new Bespin();
-	}
-
-	__declspec (dllexport) void deleter(Bespin *ptr)
-	{
-		delete ptr;
-	}
-}
-#endif
-
-void Bespin::greet()
-{
-	std::cout << "Greetings from Bespin !" << std::endl;
-}
-
-void Bespin::hello(int val)
-{
-	std::cout << "Hello from Bespin !" << val << std::endl;
-}
 
 /*
 ** Using the smart pointer directly in an inner function because
@@ -109,10 +68,10 @@ void hello(const std::string &path)
 
 int main()
 {
-	greet(tatooineLibPath);
+	// greet(tatooineLibPath);
 	greet(bespinLibPath);
 
-	hello(tatooineLibPath);
+	// hello(tatooineLibPath);
 	hello(bespinLibPath);
 
 	return 0;
