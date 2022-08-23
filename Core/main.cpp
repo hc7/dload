@@ -8,7 +8,7 @@
 using namespace std;
 
 #ifdef WIN32
-static const std::string bespinLibPath = "derivedBespin.dll";
+static const std::string bespinLibPath = "BDerived.dll";
 static const std::string tatooineLibPath = "Tatooine.dll";
 #endif
 #ifdef __linux__
