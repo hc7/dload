@@ -1,5 +1,5 @@
+
 #include "Bespin1.h"
-#include "Bespin.h"
 
 #if defined(__linux__) || defined(__APPLE__)
 extern "C"
@@ -31,15 +31,6 @@ extern "C"
 }
 #endif
 
-void Bespin::greet()
-{
-	std::cout << "Greetings from Bespin !" << std::endl;
-}
-
-void Bespin::hello(int val)
-{
-	std::cout << "Hello from Bespin !" << val << std::endl;
-}
 
 void Bespin1::greet()
 {
