@@ -4,7 +4,7 @@ project(Greet-Core)
 set(CMAKE_CXX_STANDARD 17)
 
 ### Output directory ###
-set(CMAKE_OUTPUT_DIR ${CMAKE_SOURCE_DIR}/Core/build)
+set(CMAKE_OUTPUT_DIR ${CMAKE_SOURCE_DIR}/Build)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_OUTPUT_DIR})
@@ -41,12 +41,15 @@ include_directories(
 add_executable(Greet-Core
 	${DLLOADER_SRC}
 	Core/main.cpp
+	Core/Bespin.cpp
+	API/Bespin.h
 )
 
 target_link_libraries(Greet-Core ${CMAKE_DL_LIBS})
+target_link_options(Greet-Core PUBLIC -Wl,-E)
 
 set_property( DIRECTORY PROPERTY VS_STARTUP_PROJECT Greet-Core)
 
-add_subdirectory(Libraries/Tatooine)
-add_subdirectory(Libraries/Bespin)
-add_subdirectory(Libraries/derivedBespin)
+# add_subdirectory(Libraries/Tatooine)
+# add_subdirectory(Libraries/Bespin)
+add_subdirectory(Libraries/BDerived)

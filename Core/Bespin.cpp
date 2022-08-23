@@ -1,5 +1,4 @@
-
-#include "Bespin1.h"
+#include "Bespin.h"
 
 #if defined(__linux__) || defined(__APPLE__)
 extern "C"
@@ -19,27 +18,24 @@ extern "C"
 #ifdef WIN32
 extern "C"
 {
-	__declspec (dllexport) Bespin1 *allocator()
+	__declspec (dllexport) Bespin *allocator()
 	{
-		return new Bespin1();
+		return new Bespin();
 	}
 
-	__declspec (dllexport) void deleter(Bespin1 *ptr)
+	__declspec (dllexport) void deleter(Bespin *ptr)
 	{
 		delete ptr;
 	}
 }
 #endif
 
-
-void Bespin1::greet()
+void Bespin::greet()
 {
-	std::cout << "Greetings from Bespin1 !" << std::endl;
+	std::cout << "Greetings from Bespin !" << std::endl;
 }
 
-/*
-void Bespin1::hello(int val)
+void Bespin::hello(int val)
 {
 	std::cout << "Hello from Bespin !" << val << std::endl;
 }
-*/

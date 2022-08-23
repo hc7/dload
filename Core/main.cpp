@@ -9,11 +9,12 @@
 using namespace std;
 
 #ifdef WIN32
-static const std::string bespinLibPath = "derivedBespin.dll";
+static const std::string bespinLibPath = "BDerived.dll";
 static const std::string tatooineLibPath = "Tatooine.dll";
 #endif
 #ifdef __linux__
-static const std::string bespinLibPath = "./libBespin.so";
+// static const std::string bespinLibPath = "./libBespin.so";
+static const std::string bespinLibPath = "./libBDerived.so";
 static const std::string tatooineLibPath = "./libTatooine.so";
 #endif
 #ifdef __APPLE__
@@ -21,16 +22,6 @@ static const std::string bespinLibPath = "./libBespin.dylib";
 static const std::string tatooineLibPath = "./libTatooine.dylib";
 #endif
 
-
-void Bespin::greet()
-{
-	std::cout << "Greetings from Bespin !" << std::endl;
-}
-
-void Bespin::hello(int val)
-{
-	std::cout << "Hello from Bespin !" << val << std::endl;
-}
 
 #if defined(__linux__) || defined(__APPLE__)
 extern "C"
@@ -110,10 +101,10 @@ void hello(const std::string &path)
 
 int main()
 {
-	greet(tatooineLibPath);
+	// greet(tatooineLibPath);
 	greet(bespinLibPath);
 
-	hello(tatooineLibPath);
+	// hello(tatooineLibPath);
 	hello(bespinLibPath);
 
 	return 0;

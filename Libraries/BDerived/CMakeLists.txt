@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project(derivedBespin
+project(BDerived
         VERSION 0.0.1
         DESCRIPTION "Greetings from derived Bespin")
 
@@ -10,9 +10,10 @@ include_directories(
 	../../API/
 )
 
-add_library(derivedBespin SHARED
+add_library(BDerived SHARED
 	../../API/IPlanet.h
-	Bespin.h
-	Bespin1.h
-	Bespin1.cpp
+	../../API/Bespin.h
+	BDerived.h
+	BDerived.cpp
+	
 )

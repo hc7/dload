@@ -7,8 +7,8 @@ class Bespin : public IPlanet
 {
 public:
 	Bespin() = default;
-	~Bespin() = default;
+	virtual ~Bespin() = default;
 
-	void greet() override;
-	void hello(int val);
+	virtual void greet() override;
+	virtual void hello(int val) override;
 };

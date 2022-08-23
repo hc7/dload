@@ -10,5 +10,5 @@ public:
 	~Tatooine() = default;
 
 	void greet() override;
-	void hello(int val);
+	void hello(int val) override;
 };
