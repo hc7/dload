@@ -13,5 +13,5 @@ public:
 	** Pure method which will be overrided.
 	*/
 	virtual void greet() = 0;
-	virtual void hello(int val) = 0;
+	virtual void hello(IPlanet *iface) = 0;
 };

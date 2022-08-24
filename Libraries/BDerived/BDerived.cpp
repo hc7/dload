@@ -34,3 +34,10 @@ void BDerived::greet()
 {
 	std::cout << "Greetings from BDerived !" << std::endl;
 }
+
+void BDerived::hello(IPlanet *iface)
+{
+	std::cout << "calling greet() function from IPlanet" << std::endl;
+	own_class = iface;
+	own_class->greet();
+}

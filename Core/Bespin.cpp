@@ -3,10 +3,10 @@
 
 void Bespin::greet()
 {
-	std::cout << "Greetings from Bespin !" << std::endl;
+	std::cout << "Greetings from Bespin !!!!" << std::endl;
 }
 
-void Bespin::hello(int val)
+void Bespin::hello(IPlanet *iface)
 {
-	std::cout << "Hello from Bespin !" << val << std::endl;
+	std::cout << "Hello from Bespin !" << iface << std::endl;
 }

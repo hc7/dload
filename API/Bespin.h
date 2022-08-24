@@ -10,5 +10,5 @@ public:
 	virtual ~Bespin() = default;
 
 	virtual void greet() override;
-	virtual void hello(int val) override;
+	virtual void hello(IPlanet *iface) override;
 };

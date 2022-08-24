@@ -69,8 +69,8 @@ void greetFromAPlanet(dlloader::DLLoader<IPlanet>& dlloader)
 void helloFromAPlanet(dlloader::DLLoader<IPlanet> &dlloader)
 {
 	std::shared_ptr<IPlanet> planet = dlloader.DLGetInstance();
-
-	planet->hello(1);
+	std::shared_ptr<IPlanet> planet2(new Bespin());
+	planet->hello(&*planet2);
 }
 
 void greet(const std::string& path)
